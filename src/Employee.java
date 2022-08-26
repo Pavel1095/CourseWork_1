@@ -1,6 +1,6 @@
 public class Employee {
 
-    private int id;
+    private final int id;
     private String fullname;
     private int department;
     private double salary;
