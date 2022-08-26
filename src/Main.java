@@ -13,7 +13,7 @@ public class Main {
         employees[4] = new Employee("Ivan Ivanov", 5, 10000.0);
         employees[6] = new Employee("Ivan Ivanov", 1, 7000.0);
         employees[7] = new Employee(null, 1, 5000.0);
-        System.out.println(getEmployeeMinSalary());
+        System.out.println(getAndCalculateAverageSalary());
     }
 
     public static void printAllEmployee() {
@@ -59,4 +59,39 @@ public class Main {
         return minSalaryEmpl;
     }
 
+    public static Employee getEmployeeMaxSalary() {
+        double maxSalary = -1;
+        Employee maxSalaryEmpl = null;
+        int index = 0;
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                maxSalary = employees[i].getSalary();
+                maxSalaryEmpl = employees[i];
+                index = i;
+                break;
+            }
+        }
+
+        if (maxSalaryEmpl == null) return null;
+
+        for (int i = index; i < employees.length; i++) {
+            if (employees[i] != null) {
+                if (maxSalary < employees[i].getSalary()) {
+                    maxSalary = employees[i].getSalary();
+                    maxSalaryEmpl = employees[i];
+
+                }
+            }
+        }
+        return maxSalaryEmpl;
+    }
+
+    public static double getAndCalculateAverageSalary(){
+        double sumSalaryAllEmpl = getAndCalculateSalarySum();
+        if (employees.length != 0) {
+            return sumSalaryAllEmpl / employees.length;
+        } else {
+            return 0;
+        }
+    }
 }
