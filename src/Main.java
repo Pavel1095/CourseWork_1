@@ -7,13 +7,13 @@ public class Main {
 
     public static void main(String[] args) {
         employees[0] = new Employee("Ivan Ivanov", 1, 2000.0);
-        employees[1] = new Employee("Ivan Ivanov", 2, 4000.0);
-        employees[2] = new Employee("Ivan Ivanov", 3, 6000.0);
-        employees[3] = new Employee("Ivan Ivanov", 4, 8000.0);
-        employees[4] = new Employee("Ivan Ivanov", 5, 10000.0);
-        employees[6] = new Employee("Ivan Ivanov", 1, 7000.0);
+        employees[1] = new Employee("Ivan Sidorov", 2, 4000.0);
+        employees[2] = new Employee("Vladimir Epifantsev", 3, 6000.0);
+        employees[3] = new Employee("Ivan Baranov", 4, 8000.0);
+        employees[4] = new Employee("Ivan Popov", 5, 10000.0);
+        employees[6] = new Employee("Sergey Pahomov", 1, 7000.0);
         employees[7] = new Employee(null, 1, 5000.0);
-        System.out.println(getAndCalculateAverageSalary());
+        prinntFullNameAllEmployee();
     }
 
     public static void printAllEmployee() {
@@ -92,6 +92,14 @@ public class Main {
             return sumSalaryAllEmpl / employees.length;
         } else {
             return 0;
+        }
+    }
+
+    public static void prinntFullNameAllEmployee(){
+        for (Employee employee : employees) {
+            if (employee != null) {
+                System.out.println(employee.getFullname());
+            }
         }
     }
 }
