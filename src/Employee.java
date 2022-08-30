@@ -1,23 +1,23 @@
 public class Employee {
 
     private final int id;
-    private String fullname;
+    private String fullName;
     private int department;
     private double salary;
-    private int counter;
+    private static int counter;
 
-    public Employee(String fullname, int department, double salary) {
-        this.fullname = fullname;
+    public Employee(String fullName, int department, double salary) {
+        this.fullName = fullName;
         this.department = department;
         this.salary = salary;
-        id = ++counter;
+        id = ++ counter;
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "Employee " +
                 "id = " + id +
-                ", fullname = '" + fullname + '\'' +
+                ", fullName = '" + fullName + '\'' +
                 ", department = " + department +
                 ", salary = " + salary;
     }
@@ -26,12 +26,12 @@ public class Employee {
         return id;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getDepartment() {
